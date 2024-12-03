@@ -1,0 +1,167 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oferta Especial</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #b6b4b4;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .header {
+                width: 100%;
+                background-color: #ff0000;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+            }
+            .header span {
+                font-size: 1.2em;
+            }
+            h1 {
+                text-align: center;
+                font-size: 2.5em;
+                color: #000;
+                margin-top: 80px;
+            }
+            h1 span {
+                color: #dc3545;
+            }
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            a {
+                text-decoration: none;
+                font-size: 1.2em;
+                padding: 15px 30px;
+                border-radius: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+            .accept {
+                background-color: #28a745;
+                color: white;
+            }
+            .accept:hover {
+                background-color: #218838;
+            }
+            .decline {
+                background-color: #dc3545;
+                color: white;
+            }
+            .decline:hover {
+                background-color: #c82333;
+            }
+            .testimonials {
+                text-align: center; 
+                margin-top: 50px;
+            }
+            .testimonials h2 {
+                font-size: 2em;
+                color: black;
+                margin-bottom: 30px;
+            }
+            .testimonial-cards {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .card {
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-width: 300px;
+                text-align: center;
+            }
+            .card p {
+                font-style: italic;
+                color: #333;
+                margin: 10px 0;
+            }
+            .card .name {
+                font-weight: bold;
+                margin-top: 15px;
+            }
+            .card .subtext {
+                font-size: 0.9em;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            OFERTA VÁLIDA POR  
+            
+            <span id="timer">10:00</span>
+        </div>
+        <h1>
+            PARABÉNS VOCÊ ACABA DE GANHAR UM DESCONTO DE 40% NA NOSSA <br> 
+            <span>FERRAMENTA</span> PARA IMPULSIONAR AS VENDAS 
+        </h1>
+    
+        <div class="buttons">
+            <a href="https://pay.kirvano.com/53ed46b1-21b5-4cbe-a462-6ebc158104e0" target="_blank" class="accept">
+                SIM, EU ACEITO ESSA OFERTA
+            </a>
+            <a href= obrigado.html target="_blank" class="decline">
+                NÃO ACEITO ESSA OFERTA
+            </a>
+        </div>
+        <div class="testimonials">
+            <h2>Depoimentos de Clientes</h2>
+            <div class="testimonial-cards">
+                <div class="card">
+                    <p>"Fiz o curso sobre como usar a Ferramenta e foi transformador! Antes, minha equipe era desorganizada, mas agora temos comunicação eficiente e tarefas centralizadas. Simplesmente incrível!"</p>
+                    <p class="name">Joana Oliveira</p>
+                </div>
+                <div class="card">
+                    <p>"Após fazer o curso, aplicando a ferramenta e o método 5P, minha realidade mudou. Nossa comunicação ficou ágil, e os processos super organizados! Um divisor de águas no meu negócio!"</p>
+                    <p class="name">Carla Santos</p>
+                </div>
+                <div class="card">
+                    <p>"Depois do divórcio, eu me sentia perdida. Foi com o curso, a ferramenta e o método 5P que organizei minha vida e meu negócio. Hoje, conquistei minha casa própria e minha independência!"</p>
+                    <p class="name">Ana Rodrigues</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Define os minutos iniciais
+            let time = 10 * 60; // 10 minutos em segundos
+
+            // Atualiza o timer a cada segundo
+            const timerElement = document.getElementById("timer");
+            const interval = setInterval(() => {
+                const minutes = Math.floor(time / 60);
+                const seconds = time % 60;
+
+                // Atualiza o conteúdo do timer no HTML
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Reduz o tempo
+                time--;
+
+                // Para o timer quando chegar a 0
+                if (time < 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = "OFERTA ENCERRADA";
+                }
+            }, 1000);
+        </script>
+    </body>
+    </html>
